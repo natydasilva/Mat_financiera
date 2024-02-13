@@ -1,0 +1,82 @@
+---
+title: "Ejercicios, Inversión en contexto de incertidumbre"
+format: pdf
+editor: visual
+---
+
+## Ejercicio 1
+
+Las siguientes son funciones de utilidad, identifique en cada caso a que tipo de preferencias frente al riesgo se corresponden, aversión al riesgo, tomador de riesgo o indiferente al riesgo
+
+1.  $u(w)= -exp^{-w}$
+
+2.  $u(w) = a +bw$ con $a$ y $b$ constantes, $b>0$
+
+3.  $u(w) = log(w)$
+
+4.  $u(w) = e ^{w}$
+
+5.  $u(w) = w ^g$ con $0<g<1$
+
+6.  $u(w) = w^g$ con $g>1$
+
+7.  $u(w) = a +bw +cw^2$ con $b>0$ y $c>0
+
+
+# Ejercicio 2
+
+Para las funciones de utilidad del Ejercicio 1 (1 a 4):
+
+1.  Calcule la medida de aversión al riesgo absoluto
+
+2.  Discuta la relación entre aversión al riesgo y la riqueza
+
+
+# Ejercicio 3 
+Tenemos que decidir entre dos inversiones:
+
+Inversión A que tiene tres posibles ganancias, que son de 6000, 4000 o 1000 con probabilidades de 0.3, 0.4 y 0.3, respectivamente. En este caso el valor monetario esperado es 3700  .
+
+Con la inversión B se puede perder 10.000 o  ganar 20.000 o 7.000, con probabilidades respectivas de 0.5, 0.4 y 0.1.
+
+Usamos la siguiente función de utilidad
+
+ $u(w) =log(w)$
+ 
+ 
+1. Obtenga la ganancia esperada de cada inversión
+2. Obtenga la utilidad esperada de cada inversión
+3. Decida que negocio es conveniente comparando las ganancias seguras de cada uno. 
+
+
+# Ejercicio 4 
+
+$VPN \sim N(\mu, \sigma^2)$ y utilidad con aversión constante tal que $u(w) = -e^{-Aw}$
+
+1. Ontener la ganancia segura equivalente para 2 valores de A
+
+2. Discutir la relación entre aversión al riesgo y ganancia segura equivalente 
+
+
+# Ejercicio 5 
+
+$VPN \sim N(\mu, \sigma^2)$ y utilidad con aversión constante tal que $u(w) = -e^{-Aw}$, considerar dos inversiones 
+
+
+(usando media y varianza de ejercicio 3 por ejemplo) 
+A = 1 
+
+1. Determinar que negocio es más conveniente 
+
+2. ¿Cuanto tendría que ser la ganancia esperada de B para ser conveniente ? 
+
+3. ¿Cómo cambia lo anterior si $A = 10$?
+
+
+
+
+
+
+
+
+

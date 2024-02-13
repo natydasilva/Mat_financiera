@@ -1,0 +1,149 @@
+---
+title: "Ejercicios, Inversión en contexto de incertidumbre. Solución"
+format: pdf
+editor: visual
+---
+
+## Ejercicio 1
+
+Las siguientes son funciones de utilidad, identifique en cada caso a que tipo de preferencias frente al riesgo se corresponden, aversión al riesgo, tomador de riesgo o indiferente al riesgo
+
+\textbf{Solución:}
+
+Para cada función deberán calcular la derivada segunda y en base a ello definir la preferencia del agente
+
+1.  $u(w)= -exp^{-w}$
+
+$\frac{u^{''}(w)}{w}=-e^{-w}<0$ 
+
+\textit{Averso al riesgo}
+
+2.  $u(w) = a +bw$ con $a$ y $b$ constantes, $b>0$ 
+
+$\frac{u^{''}(w)}{w}=0$
+
+\textit{Indiferente al riesgo}
+
+3.  $u(w) = log(w)$
+
+$\frac{u^{''}(w)}{w}=\frac{-1}{w^2}<0$
+
+\textit{Averso al riesgo}
+
+
+4.  $u(w) = e ^{w}$
+
+$\frac{u^{''}(w)}{w}=e^{w}>0$
+
+\textit{Tomador de riesgo}
+
+5.  $u(w) = w ^g$ con $0<g<1$
+
+$\frac{u^{''}(w)}{w} =g(g-1)w^{(g-2)}<0$
+
+\textit{Averso al riesgo}
+
+6. $u(w) = w^g$ con $g>1$
+
+$\frac{u^{''}(w)}{w}=g(g-1)w^{(g-2)}>0$
+
+\textit{Tomador de riesgo}
+
+7. $u(w) = a +bw +cw^2$ con $b>0$ y $c>0$
+
+$\frac{u^{''}(w)}{w}= 2c>0$
+
+\textit{Tomador de riesgo}
+  
+# Ejercicio 2
+
+Para las funciones de utilidad del Ejercicio 1 (1 a 4):
+
+1.  Calcule la medida de aversión al riesgo absoluto
+
+2.  Discuta la relación entre aversión al riesgo y la riqueza
+
+\textbf{Solución:}
+
+Calcule la medida de aversión al riesgo absoluto
+ 
+1. $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}= 1$
+
+2. $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}= 0$
+
+3. $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}=\frac{1}{w}$
+
+4. $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}=-1$
+
+Discuta la relación entre aversión al riesgo y la riqueza
+
+Solo en el caso 3 la medida depende de la riqueza....hay algun caso más
+
+
+# Ejercicio 3
+
+Tenemos que decidir entre dos inversiones:
+
+Inversión A que tiene tres posibles ganancias, que son de 6000, 4000 o 1000 con probabilidades de 0.3, 0.4 y 0.3, respectivamente. En este caso el valor monetario esperado es 3700  .
+
+Con la inversión B se puede perder 10.000 o  ganar 20.000 o 7.000, con probabilidades respectivas de 0.5, 0.4 y 0.1.
+
+Usamos la siguiente función de utilidad
+
+ $u(w) =log(w)$
+ 
+ 
+1. Obtenga la ganancia esperada de cada inversión
+2. Obtenga la utilidad esperada de cada inversión
+3. Decida que negocio es conveniente comparando las ganancias seguras de cada uno. 
+
+\textbf{Solución:}
+
+1. Obtenga la ganancia esperada de cada inversión
+
+$E(w_A)=6000*0.3+4000*0.4+1000*0.3= 3700$
+
+$E(w_B)= -10000*0.5+20000*0.4+7000*0.1= 3700$
+
+2. Obtenga la utilidad esperada de cada inversión 
+
+$E(u(w_A))= log(6000)*0.3+log(4000)*0.4+log(1000)*0.3= 5.92$
+
+$E(u(w_B))=  -log(10000)*0.5+log(20000)*0.4+log(7000)*0.1= 0.241$
+
+
+3. Decida que negocio es conveniente comparando las ganancias seguras de cada uno. Invierte en A
+
+# Ejercicio 4 
+
+$VPN \sim N(\mu, \sigma^2)$ y utilidad con aversión constante tal que $u(w) = -e^{-Aw}$
+
+1. Ontener la ganancia segura equivalente para 2 valores de A
+
+2. Discutir la relación entre aversión al riesgo y ganancia segura equivalente 
+
+\textbf{Solución:}
+
+1. Ontener la ganancia segura equivalente para 2 valores de A
+
+$$w_q = \mu - \frac{A}{2}\sigma^2$$
+- Si $A=1$ entonces $w_q = \mu-\sigma^2$
+
+- Si $A=4$ entonces $w_q = \mu-2\sigma^2$
+
+
+
+# Ejercicio 5 
+
+$VPN \sim N(\mu, \sigma^2)$ y utilidad con aversión constante tal que $u(w) = -e^{-Aw}$, considerar dos inversiones 
+
+
+(usando media y varianza de ejercicio 3 por ejemplo) 
+A = 1 
+
+1. Determinar que negocio es más conveniente 
+
+2. ¿Cuanto tendría que ser la ganancia esperada de B para ser conveniente ? 
+
+3. ¿Cómo cambia lo anterior si $A = 10$?
+---
