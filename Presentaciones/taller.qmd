@@ -1,0 +1,496 @@
+---
+title: "Taller: Aversión al Riesgo"
+format: 
+ beamer:
+  colortheme: beaver
+  theme: Szeged
+author: Natalia da Silva     
+date: Febrero 2024
+lang: es
+execute:
+  echo: false
+  include: false
+  warning: false
+---
+
+
+# Taller
+
+1.  Planteo de objetivos del taller y de la clase teórico-práctica;
+
+2.  Lista de ejercicios a proponer para la clase. Discusión sobre la forma de abordar el tema y exponerlo frente a los estudiantes
+
+3.  Análisis de las principales dificultades potenciales y el planteo y fundamentación de la solución propuesta.
+
+---
+
+# UC Matemática financiera (curso actual) 
+
+- Interés y Descuento.
+- Rentas.
+- Inversiones
+- Bonos
+- Nociones de Cálculo Actuarial.
+- Análisis de casos de la realidad cotidiana.
+
+---
+
+# Propuesta
+Incorporar incertidumbre (*riesgo*) en la evaluación de inversiones. 
+\vspace{.5cm}
+
+**Temas nuevos:**       
+
+- Función de utilidad y decisiones en contexto de incertidumbre
+
+- Ganancia esperada y utilidad esperada
+
+- Aversión al riesgo, definición y medidas de aversión al riesgo 
+
+- Renta equivalente y Prima por riesgo    
+
+\vspace{1cm}
+
+Necesitaremos *Introducción a la Estadística* como previa.
+---
+
+#  Motivación
+---
+
+# Evaluar inversiones con VPN
+Una inversión se representa con un flujo futuro de pagos, 
+$$VPN = I_0 + \sum_{k=1}^n I_k (1 + i)^{−k}$$
+
+- Conviene invertir si $VPN>0$
+- Entre dos proyectos elegimos el que tiene mayor VPN 
+- ¿Cómo se modifica si no estamos seguros de los pagos? 
+---
+
+# Ejemplo (muy) sencillo
+
+Heredo un *chiringuito* en una playa del Este por un verano para vender buñuelos de algas. 
+
+| Estado      | Ganancia (VPN) | Probabilidad | 
+|-------------|--------|----------|
+| Buen clima       | \$100   | .5    | 
+| Mal clima   |  \$36   | .5    |
+
+$$ GE = E(VPN) = \frac{1}{2}\times 100 + \frac{1}{2}\times 36 = 68$$
+Notar: no hay inversión inicial, hay 1 sólo período. 
+---
+
+# Limitación de VPN 
+
+El criterio del VPN no considera el riesgo.
+
+Consideremos un segundo proyecto: *vender el chiringuito por \$68*        
+
+- Ambos proyectos tienen la misma $GE$
+- ¿Somos indiferentes a que proyecto elegir ? 
+
+\vspace{1cm}
+
+Lo que se observa es que hay **preferencia** por el proyecto de venta, ya que la ganancia es **libre de riesgo**. 
+Misma ganancia esperada pero distinto riesgo.
+---
+# Aversión al Riesgo 
+---
+
+# Definición y función de utilidad 
+
+Un agente (inversor) es **adverso al riesgo** cuando *prefiere* un ingreso con absoluta certeza en lugar de un ingreso riesgoso con igual valor esperado.
+
+- Las preferencias de los agentes se miden con funciones de utilidad 
+- Los inversores buscan maximizar la *utilidad esperada* 
+
+\vspace{1.5cm}
+
+Función de utilidad: $u(w)$ concepto clave en Teoría Económica para ordenar preferencias de agentes (consumidores, inversores, empresas) y modelar la toma de decisiones 
+---
+
+# Utilidad Esperada 
+
+En el ejemplo, supongamos que la utilidad se mide con la función: $u(w) = \sqrt{w}$
+
+| Estado      | Ganancia (VPN) | Probabilidad | 
+|-------------|--------|----------|
+| Buen clima  | \$100   | .5    | 
+| Mal clima   |  \$36   | .5    |
+
+$$ 
+\begin{array}{ll}
+UE & = E[ U(VPN) ] \\ 
+   & = \frac{1}{2}\times u(100) + \frac{1}{2}\times u(36) \\
+   & = \frac{1}{2}\times 10 + \frac{1}{2}\times 6 \\
+   & = 8
+\end{array}
+$$
+Sin embargo la utilidad de vender el chiringuito es $u(68) \approx 8.25$
+---
+
+# Funciones de Utilidad 
+Mide la utilidad obtenida por un agente/consumidor en función de la riqueza/consumo de bienes.
+Suponiendo agentes racionales:
+
+1. Las funciones de utilidad, $u(w)$, son crecientes $u^{'}(w)>0$ a mayor riqueza mayor utilidad.
+
+2. La utilidad crece con la riqueza a tasa:
+  - Decreciente (adverso al riesgo), $u^{''}(w)>0$
+  - Constate (indiferente al riesgo), $u^{''}(w)= 0$
+  - Creciente (tomador de riesgo), $u^{''}(w)<0$
+  
+
+---
+
+# Funciones de Utilidad 
+
+![](Rplot01.png)
+```{r}
+#| eval: false
+library(patchwork)
+library(ggplot2)
+g1 <- ggplot(data.frame(x = 1:100), aes(x)) +
+  geom_function(fun = function(x) log(x), colour = "red")+ labs(title= 'Averso al riesgo',y= "Utilidad", x ="Riqueza") +
+  theme(axis.text.y = element_blank())
+g2 <-  ggplot(data.frame(x = 1:100), aes(x)) +
+  geom_function(fun = function(x) x, colour = "red")+ labs(title= 'Indiferente al riesgo',y= "Utilidad", x ="Riqueza")+
+  theme(axis.text.y = element_blank())
+g3 <-  ggplot(data.frame(x = 1:100), aes(x)) +
+  geom_function(fun = function(x) x^4, colour = "red")+ labs(title= 'Tomador de riesgo', y= "Utilidad", x ="Riqueza")+ theme(axis.text.y = element_blank())
+
+ g1+g2+g3
+
+  
+```
+---
+
+# Medidas de aversión al riesgo
+
+- La aversión al riesgo depende de la curvatura de la función de utilidad
+
+- Se usan dos medidas: el grado de aversión absoluta al riesgo (A) y el grado de aversión relativa al riesgo (R)
+
+$A(w)=-\frac{u^{''}(w)}{u^{'}(w)}$
+
+$R(w)=-\frac{u^{''}(w)}{u^{'}(w)}w$
+
+---
+
+# Ganancia segura equivalente 
+
+¿Cuál es la ganancia libre de riesgo que tiene igual utilidad esperada que el ingreso riesgoso? 
+
+$w_q$ es el valor de ganancia/riqueza que verifica:
+
+$$u(w_q)=E[u(w)]$$
+
+- En el ejemplo: $w_q = u^{-1}(UE) = 64$
+- Soy *indiferente* entre vender a 64 o obtener una ganancia esperada de 68 ya que tienen la misma utilidad esperada.
+
+\vspace{1.5cm}
+
+Lo utilizaremos para evaluar inversiones en condiciones de incertidumbre. 
+---
+
+# Evaluación de inversiones bajo incertidumbre 
+
+# Microeconomía y Finanzas
+
+Hay dos elementos fundamentales que distinguen la teoría microeconómica clásica de la Teoría de Finanzas: el elemento tiempo y el elemento incertidumbre
+\vspace{.5cm}
+
+En lo anterior para introducir incertidumbre simplificamos el elemento tiempo. ¿Cómo es posible trabajar con ambos a la vez? 
+
+1. Diseñar escenarios con varios períodos y varios estados de la naturaleza. 
+    - El cálculo de probabilidades es más complejo
+    - Usualmente se utilizan métodos de simulación
+
+2. Asumir distribuciones de probabilidad para los componentes del VPN. 
+---
+
+# VPN aleatorio
+
+$$VPN = I_0 + \sum_{k=1}^n I_k (1 + i)^{−k}$$
+
+Si los pagos son normales, independientes e idénticamente distribuidos, $I_k \sim N(\mu_0, \sigma^2_0)$, entonces el VPN es una combinación lineal de normales independientes:  
+$$VPN \sim N(\mu, \sigma^2)$$ 
+---
+
+# Elección de inversiones bajo normalidad
+
+- Normalidad de VPN: $VPN = w \sim N(\mu, \sigma^2)$
+- Utilidad con aversión constante al riesgo: $u(w) = -\exp^{-Aw}$
+
+En estas condiciones podemos obtener la utilidad esperada de una inversión: 
+$$ UE = E[ -e^{-Aw} ] = -e^{-A(\mu - A\sigma^2/2) } $$
+---
+
+# Comparar inversiones bajo incertidumbre
+
+La **ganancia segura equivalente** se obtiene haciendo como
+$$w_q = \mu - \frac{A}{2}\sigma^2$$
+- Podemos comparar proyectos en condiciones de incertidumbre en base a $w_q$.
+- Seleccionamos el proyecto con mayor $w_q$.
+- En este caso la ecuación muestra el compromiso entre ganancia esperada y riesgo, inversores adversos al riesgo exigen mayores ganancias para compensar el riesgo.
+
+# Ejercicios 
+
+# Ejercicio 1
+
+Las siguientes son funciones de utilidad, identifique en cada caso a que tipo de preferencias frente al riesgo se corresponden, aversión al riesgo, tomador de riesgo o indiferente al riesgo
+
+1.  $u(w)= -exp^{-w}$
+
+2.  $u(w) = a +bw$ con $a$ y $b$ constantes, $b>0$
+
+3.  $u(w) = log(w)$
+
+4.  $u(w) = e ^{w}$
+
+5.  $u(w) = w ^g$ con $0<g<1$
+
+6.  $u(w) = w^g$ con $g>1$
+
+7.  $u(w) = a +bw +cw^2$ con $b>0$ y $c>0
+---
+
+# Ejercicio 1
+
+Hay que calcular en cada caso la derivada segunda y usar la definición de aversión al riesgo.
+
+Posible problema que no recuerden como derivar y recordar la definición de aversión al riesgo.
+
+---
+
+# Ejercicio 2
+
+Para las funciones de utilidad del Ejercicio 1 (sólo para 1, 3 y  7):
+
+1.  Calcule la medida de aversión al riesgo absoluto
+
+2.  Discuta la relación entre aversión al riesgo y la riqueza
+
+---
+
+# Ejercicio 2
+Usar la definición de aversión al riesgo
+
+$$A(w) = -\frac{u^{''}(w)}{u^{'}(w)}$$
+Analizar el resultado en función de w, ya hicieron las derivadas en la parte anterior.
+
+Ver que les quede coherente con Ej. 1
+
+# Ejercicio 3 
+Tenemos que decidir entre dos inversiones:
+
+Inversión A que tiene tres posibles ganancias, que son de 6000, 4000 o 1000 con probabilidades de 0.3, 0.4 y 0.3, respectivamente. En este caso el valor monetario esperado es 3700  .
+
+Con la inversión B se puede perder 10.000 o  ganar 20.000 o 7.000, con probabilidades respectivas de 0.5, 0.4 y 0.1.
+
+Usamos la siguiente función de utilidad
+
+ $u(w) =log(w)$
+----
+
+# Ejercicio 3
+
+
+1. Obtenga la ganancia esperada de cada inversión.
+2. Obtenga la utilidad esperada de cada inversión.
+3. Decida que negocio es conveniente comparando las ganancias seguras de cada uno. 
+
+---
+
+# Ejercicio 3
+
+El foco es saber como calcular la ganancia esperada, utilidad esperada y ganancia segura.  Posible problema no recordar como se calcula la esperanza.
+
+Decidir en base a la ganancia segura.
+
+
+# Ejercicio 4 
+
+$VPN \sim N(\mu, \sigma^2)$ y utilidad con aversión constante tal que $u(w) = -e^{-Aw}$
+
+1. Obtener la ganancia segura equivalente para 2 valores de A
+
+2. Discutir la relación entre aversión al riesgo y ganancia segura equivalente 
+---
+
+# Ejercicio 4 
+
+Básicamente es usar la fórmula presentada en clase para este caso 
+
+$$w_q = \mu - \frac{A}{2}\sigma^2$$
+para dos valore distintos de A y ver la relación entre A y $w_q$
+
+Problema que no recuerden que vimos esto en clase.
+
+
+# Ejercicio 5 
+
+$VPN \sim N(\mu, \sigma^2)$ y utilidad con aversión constante tal que $u(w) = -e^{-Aw}$, considerar dos inversiones 
+Inversión 1: $\mu_1 =3000$ $\sigma^2 = 500$
+Inversión 2: $\mu_2 =3500$ $\sigma^2 = 1600$
+A = 1 
+
+1. Determinar que negocio es más conveniente 
+
+2. ¿Cuanto tendría que ser la ganancia esperada de 2 para ser conveniente ? 
+
+3. ¿Cómo cambia lo anterior si $A = 10$?
+
+---
+# Ejercicio 5 
+
+Similar a lo anterior pero ahora hay que usar $w_q$ para comparar inversiones y ver el efecto de cambios en la aversión al riesgo.
+
+# Repositorio con Material
+
+[https://github.com/natydasilva/Mat_financiera](https://github.com/natydasilva/Mat_financiera)
+
+
+# Ejercicio 1, solución
+
+Para cada función deberán calcular la derivada segunda y en base a ello definir la preferencia del agente
+
+1.  $u(w)= -exp^{-w}$
+
+$u^{''}(w)=-e^{-w}<0$ 
+
+\textit{Averso al riesgo}
+
+2.  $u(w) = a +bw$ con $a$ y $b$ constantes, $b>0$ 
+
+$u^{''}(w)=0$
+
+\textit{Indiferente al riesgo}
+
+3.  $u(w) = log(w)$
+
+$u^{''}(w)=\frac{-1}{w^2}<0$
+
+\textit{Averso al riesgo}
+
+---
+
+# Ejercicio 1, solución
+
+
+4. $u(w) = e ^{w}$
+
+$u^{''}(w)=e^{w}>0$
+
+\textit{Tomador de riesgo}
+
+5.  $u(w) = w ^g$ con $0<g<1$
+
+$u^{''}(w) =g(g-1)w^{(g-2)}<0$
+
+\textit{Averso al riesgo}
+---
+
+# Ejercicio 1, solución
+
+6. $u(w) = w^g$ con $g>1$
+
+$u^{''}(w)=g(g-1)w^{(g-2)}>0$
+
+\textit{Tomador de riesgo}
+
+7. $u(w) = a +bw +cw^2$ con $b>0$ y $c>0$
+
+$u^{''}(w)= 2c>0$
+
+\textit{Tomador de riesgo}
+  
+---
+
+# Ejercicio 2, Solución
+
+Calcule la medida de aversión al riesgo absoluto
+ 
+1. $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}= A$
+
+3. $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}= \frac{1}{w}$
+
+7. $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}=\frac{-2c}{b+2cw}$
+
+---
+
+# Ejercicio 2,  Solución
+Discuta la relación entre aversión al riesgo y la riqueza
+
+1.  Exhibe una aversión al riesgo constante para todos los rangos de riqueza.
+
+3. La aversión al riesgo disminuye a medida que aumenta la riqueza.
+
+7. La aversión al riesgo aumenta a medida que aumenta la riqueza.
+---
+
+# Ejercicio 3, Solución
+
+1. Obtenga la ganancia esperada de cada inversión
+
+$E(w_A)=6000*0.3+4000*0.4+1000*0.3= 3700$
+
+$E(w_B)= -10000*0.5+20000*0.4+7000*0.1= 3700$
+---
+
+# Ejercicio 3, Solución
+
+2. Obtenga la utilidad esperada de cada inversión 
+
+$E(u(w_A))= log(6000)*0.3+log(4000)*0.4+log(1000)*0.3= 5.92$
+
+$E(u(w_B))=  -log(10000)*0.5+log(20000)*0.4+log(7000)*0.1= 0.241$
+
+
+3. Decida que negocio es conveniente comparando las ganancias seguras de cada uno. Invierte en A
+
+- $w_{qA} = e^(5.92)=372$
+- $q_{qB} = e^(0.241)=1.29$
+
+---
+
+# Ejercicio 4, Solución
+
+1. Obtener la ganancia segura equivalente para 2 valores de A
+
+$$w_q = \mu - \frac{A}{2}\sigma^2$$
+- Si $A=1$ entonces $w_q = \mu-\sigma^2$
+
+- Si $A=4$ entonces $w_q = \mu-2\sigma^2$
+
+
+---
+
+# Ejercicio 5, Solución 
+
+1. Determinar que negocio es más conveniente 
+
+$$w_{q1} = \mu_1 - \frac{A}{2}\sigma_1^2= 3000-250=2750$$
+$$w_{q2} = \mu_1 - \frac{A}{2}\sigma_1^2= 3500-800=2700$$
+---
+
+# Ejercicio 5, Solución 
+
+2. ¿Cuanto tendría que ser la ganancia esperada de la inversión 2 para ser conveniente?
+
+Debería ser al menos 3550 para que $w_{q2}>2750$
+
+---
+
+# Ejercicio 5, Solución 
+
+3. ¿Cómo cambia lo anterior si $A = 10$?
+$$w_{q1} = \mu_1 - \frac{A}{2}\sigma_1^2= 3000-10*250=500$$
+$$w_{q2} = \mu_1 - \frac{A}{2}\sigma_1^2= 3500-10*800=-4500$$
+La ganancia esperada de la inversión 2 debería ser al menos 9500 para que $w_{q2}>500$
+---
+
+
+
+
+
+
