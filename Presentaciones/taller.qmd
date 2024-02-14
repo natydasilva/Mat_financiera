@@ -135,9 +135,9 @@ Suponiendo agentes racionales:
 1. Las funciones de utilidad, $u(w)$, son crecientes $u^{'}(w)>0$ a mayor riqueza mayor utilidad.
 
 2. La utilidad crece con la riqueza a tasa:
-  - Decreciente (adverso al riesgo), $u^{''}(w)>0$
+  - Decreciente (adverso al riesgo), $u^{''}(w)<0$
   - Constate (indiferente al riesgo), $u^{''}(w)= 0$
-  - Creciente (tomador de riesgo), $u^{''}(w)<0$
+  - Creciente (tomador de riesgo), $u^{''}(w)>0$
   
 
 ---
