@@ -451,8 +451,8 @@ $E(u(w_B))=  -log(10000)*0.5+log(20000)*0.4+log(7000)*0.1= 0.241$
 
 3. Decida que negocio es conveniente comparando las ganancias seguras de cada uno. Invierte en A
 
-- $w_{qA} = e^(5.92)=372$
-- $q_{qB} = e^(0.241)=1.29$
+- $w_{qA} = e^{(5.92)}=372$
+- $w_{qB} = e^{(0.241)}=1.29$
 
 ---
 
@@ -461,6 +461,7 @@ $E(u(w_B))=  -log(10000)*0.5+log(20000)*0.4+log(7000)*0.1= 0.241$
 1. Obtener la ganancia segura equivalente para 2 valores de A
 
 $$w_q = \mu - \frac{A}{2}\sigma^2$$
+
 - Si $A=1$ entonces $w_q = \mu-\sigma^2$
 
 - Si $A=4$ entonces $w_q = \mu-2\sigma^2$
@@ -490,7 +491,6 @@ Debería ser al menos 3550 para que $w_{q2}>2750$
 $$w_{q1} = \mu_1 - \frac{A}{2}\sigma_1^2= 3000-10*250=500$$
 $$w_{q2} = \mu_1 - \frac{A}{2}\sigma_1^2= 3500-10*800=-4500$$
 La ganancia esperada de la inversión 2 debería ser al menos 9500 para que $w_{q2}>500$
----
 
 
 
