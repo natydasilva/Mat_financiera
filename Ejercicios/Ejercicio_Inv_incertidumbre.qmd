@@ -23,7 +23,6 @@ Las siguientes son funciones de utilidad, identifique en cada caso a que tipo de
 
 7.  $u(w) = a +bw +cw^2$ con $b>0$ y $c>0$
 
-
 # Ejercicio 2
 
 Para las funciones de utilidad del Ejercicio 1 (sólo para 1, 3 y 7):
@@ -32,13 +31,11 @@ Calcule la medida de aversión al riesgo absoluto
 
 Discuta la relación entre aversión al riesgo y la riqueza
 
-
-
-# Ejercicio 3 
+# Ejercicio 3
 
 Tenemos que decidir entre dos inversiones:
 
-Inversión A que tiene tres posibles ganancias, que son de 6000, 4000 o 1000 con probabilidades de 0.3, 0.4 y 0.3, respectivamente. En este caso el valor monetario esperado es 3700 .
+Inversión A que tiene tres posibles ganancias, que son de 6000, 4000 o 1000 con probabilidades de 0.3, 0.4 y 0.3, respectivamente.
 
 Con la inversión B se puede perder 10.000 o ganar 20.000 o 7.000, con probabilidades respectivas de 0.5, 0.4 y 0.1.
 
@@ -50,10 +47,9 @@ Obtenga la ganancia esperada de cada inversión
 
 Obtenga la utilidad esperada de cada inversión
 
-Decida que negocio es conveniente comparando las ganancias seguras de cada uno. 
+Decida que negocio es conveniente comparando las ganancias seguras de cada uno.
 
-
-# Ejercicio 4 
+# Ejercicio 4
 
 $VPN \sim N(\mu, \sigma^2)$ y utilidad con aversión constante tal que $u(w) = -e^{-Aw}$
 
@@ -61,22 +57,12 @@ Obtener la ganancia segura equivalente para 2 valores de A
 
 Discutir la relación entre aversión al riesgo y ganancia segura equivalente.
 
-
-# Ejercicio 5 
+# Ejercicio 5
 
 $VPN \sim N(\mu, \sigma^2)$ y utilidad con aversión constante tal que $u(w) = -e^{-Aw}$, considerar dos inversiones Inversión 1: $\mu_1 =3000$ $\sigma^2 = 500$ Inversión 2: $\mu_2 =3500$ $\sigma^2 = 1600$ A = 1
 
 Determinar que negocio es más conveniente
 
-2. ¿Cuanto tendría que ser la ganancia esperada de 2 para ser conveniente ?
+2.  ¿Cuanto tendría que ser la ganancia esperada de 2 para ser conveniente ?
 
-3. ¿Cómo cambia lo anterior si $A = 10$?
-
-
-
-
-
-
-
-
-
+3.  ¿Cómo cambia lo anterior si $A = 10$?

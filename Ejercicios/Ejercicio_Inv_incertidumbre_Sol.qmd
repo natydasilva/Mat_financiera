@@ -85,7 +85,7 @@ Discuta la relación entre aversión al riesgo y la riqueza
 
 Tenemos que decidir entre dos inversiones:
 
-Inversión A que tiene tres posibles ganancias, que son de 6000, 4000 o 1000 con probabilidades de 0.3, 0.4 y 0.3, respectivamente. En este caso el valor monetario esperado es 3700 .
+Inversión A que tiene tres posibles ganancias, que son de 6000, 4000 o 1000 con probabilidades de 0.3, 0.4 y 0.3, respectivamente.
 
 Con la inversión B se puede perder 10.000 o ganar 20.000 o 7.000, con probabilidades respectivas de 0.5, 0.4 y 0.1.
 
