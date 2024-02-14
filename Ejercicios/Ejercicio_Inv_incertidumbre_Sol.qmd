@@ -114,7 +114,8 @@ $E(u(w_B))= -log(10000)*0.5+log(20000)*0.4+log(7000)*0.1= 0.241$
 3.  Decida que negocio es conveniente comparando las ganancias seguras de cada uno. Invierte en A
 
 -   $w_{qA} = e^{(5.92)}=372$
--   $q_{qB} = e^{(0.241)}=1.29$
+
+-   $w_{qB} = e^{(0.241)}=1.29$
 
 Seleccionamos la inversión A ya que la ganancia segura es de 372 contra 1.29 en la Inversión B.
 
