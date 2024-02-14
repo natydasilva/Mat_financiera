@@ -1,5 +1,6 @@
 ---
-title: "Ejercicios, Inversión en contexto de incertidumbre. Solución"
+title: "Ejercicios: Inversión en contexto de incertidumbre. Solución"
+subtitle: "Matemática Financiera"
 format: pdf
 editor: visual
 ---
@@ -14,50 +15,49 @@ Para cada función deberán calcular la derivada segunda y en base a ello defini
 
 1.  $u(w)= -exp^{-w}$
 
-$\frac{u^{''}(w)}{w}=-e^{-w}<0$ 
+$u^{''}(w)=-e^{-w}<0$
 
 \textit{Averso al riesgo}
 
-2.  $u(w) = a +bw$ con $a$ y $b$ constantes, $b>0$ 
+2.  $u(w) = a +bw$ con $a$ y $b$ constantes, $b>0$
 
-$\frac{u^{''}(w)}{w}=0$
+$u^{''}(w)=0$
 
 \textit{Indiferente al riesgo}
 
 3.  $u(w) = log(w)$
 
-$\frac{u^{''}(w)}{w}=\frac{-1}{w^2}<0$
+$u^{''}(w)=\frac{-1}{w^2}<0$
 
 \textit{Averso al riesgo}
 
-
 4.  $u(w) = e ^{w}$
 
-$\frac{u^{''}(w)}{w}=e^{w}>0$
+$u^{''}(w)=e^{w}>0$
 
 \textit{Tomador de riesgo}
 
 5.  $u(w) = w ^g$ con $0<g<1$
 
-$\frac{u^{''}(w)}{w} =g(g-1)w^{(g-2)}<0$
+$u^{''}(w) =g(g-1)w^{(g-2)}<0$
 
 \textit{Averso al riesgo}
 
-6. $u(w) = w^g$ con $g>1$
+6.  $u(w) = w^g$ con $g>1$
 
-$\frac{u^{''}(w)}{w}=g(g-1)w^{(g-2)}>0$
+$u^{''}(w)=g(g-1)w^{(g-2)}>0$
+
+\textit{Tomador de riesgo}
+
+7.  $u(w) = a +bw +cw^2$ con $b>0$ y $c>0$
+
+$u^{''}(w)= 2c>0$
 
 \textit{Tomador de riesgo}
 
-7. $u(w) = a +bw +cw^2$ con $b>0$ y $c>0$
-
-$\frac{u^{''}(w)}{w}= 2c>0$
-
-\textit{Tomador de riesgo}
-  
 # Ejercicio 2
 
-Para las funciones de utilidad del Ejercicio 1 (1 a 4):
+Para las funciones de utilidad del Ejercicio 1 (sólo para 1, 3 y 7):
 
 1.  Calcule la medida de aversión al riesgo absoluto
 
@@ -66,84 +66,92 @@ Para las funciones de utilidad del Ejercicio 1 (1 a 4):
 \textbf{Solución:}
 
 Calcule la medida de aversión al riesgo absoluto
- 
-1. $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}= 1$
 
-2. $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}= 0$
+1.  $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}= A$
 
-3. $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}=\frac{1}{w}$
+2.  $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}= \frac{1}{w}$
 
-4. $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}=-1$
+3.  $A(w) = -\frac{u^{''}(w)}{u^{'}(w)}=\frac{-2c}{b+2cw}$
 
 Discuta la relación entre aversión al riesgo y la riqueza
 
-Solo en el caso 3 la medida depende de la riqueza....hay algun caso más
+1.  Exhibe una aversión al riesgo constante para todos los rangos de riqueza.
 
+2.  La aversión al riesgo disminuye a medida que aumenta la riqueza.
+
+3.  La aversión al riesgo aumenta a medida que aumenta la riqueza.
 
 # Ejercicio 3
 
 Tenemos que decidir entre dos inversiones:
 
-Inversión A que tiene tres posibles ganancias, que son de 6000, 4000 o 1000 con probabilidades de 0.3, 0.4 y 0.3, respectivamente. En este caso el valor monetario esperado es 3700  .
+Inversión A que tiene tres posibles ganancias, que son de 6000, 4000 o 1000 con probabilidades de 0.3, 0.4 y 0.3, respectivamente. En este caso el valor monetario esperado es 3700 .
 
-Con la inversión B se puede perder 10.000 o  ganar 20.000 o 7.000, con probabilidades respectivas de 0.5, 0.4 y 0.1.
+Con la inversión B se puede perder 10.000 o ganar 20.000 o 7.000, con probabilidades respectivas de 0.5, 0.4 y 0.1.
 
 Usamos la siguiente función de utilidad
 
- $u(w) =log(w)$
- 
- 
-1. Obtenga la ganancia esperada de cada inversión
-2. Obtenga la utilidad esperada de cada inversión
-3. Decida que negocio es conveniente comparando las ganancias seguras de cada uno. 
+$u(w) =log(w)$
+
+1.  Obtenga la ganancia esperada de cada inversión
+2.  Obtenga la utilidad esperada de cada inversión
+3.  Decida que negocio es conveniente comparando las ganancias seguras de cada uno.
 
 \textbf{Solución:}
 
-1. Obtenga la ganancia esperada de cada inversión
+1.  Obtenga la ganancia esperada de cada inversión
 
 $E(w_A)=6000*0.3+4000*0.4+1000*0.3= 3700$
 
 $E(w_B)= -10000*0.5+20000*0.4+7000*0.1= 3700$
 
-2. Obtenga la utilidad esperada de cada inversión 
+2.  Obtenga la utilidad esperada de cada inversión
 
 $E(u(w_A))= log(6000)*0.3+log(4000)*0.4+log(1000)*0.3= 5.92$
 
-$E(u(w_B))=  -log(10000)*0.5+log(20000)*0.4+log(7000)*0.1= 0.241$
+$E(u(w_B))= -log(10000)*0.5+log(20000)*0.4+log(7000)*0.1= 0.241$
 
+3.  Decida que negocio es conveniente comparando las ganancias seguras de cada uno. Invierte en A
 
-3. Decida que negocio es conveniente comparando las ganancias seguras de cada uno. Invierte en A
+-   $w_{qA} = e^{(5.92)}=372$
+-   $q_{qB} = e^{(0.241)}=1.29$
 
-# Ejercicio 4 
+Seleccionamos la inversión A ya que la ganancia segura es de 372 contra 1.29 en la Inversión B.
+
+# Ejercicio 4
 
 $VPN \sim N(\mu, \sigma^2)$ y utilidad con aversión constante tal que $u(w) = -e^{-Aw}$
 
-1. Ontener la ganancia segura equivalente para 2 valores de A
+1.  Obtener la ganancia segura equivalente para 2 valores de A
 
-2. Discutir la relación entre aversión al riesgo y ganancia segura equivalente 
+2.  Discutir la relación entre aversión al riesgo y ganancia segura equivalente
 
 \textbf{Solución:}
 
-1. Ontener la ganancia segura equivalente para 2 valores de A
+1.  Obtener la ganancia segura equivalente para 2 valores de A
 
 $$w_q = \mu - \frac{A}{2}\sigma^2$$
-- Si $A=1$ entonces $w_q = \mu-\sigma^2$
 
-- Si $A=4$ entonces $w_q = \mu-2\sigma^2$
+-   Si $A=1$ entonces $w_q = \mu-\sigma^2$
 
+-   Si $A=4$ entonces $w_q = \mu-2\sigma^2$
 
+2.  Discutir la relación entre aversión al riesgo y ganancia segura equivalente
 
-# Ejercicio 5 
+Cuanto más aversión al riesgo la ganancia segura equivalente es menor, si quiero una ganancia segura equivalente igual con mayor aversión al riesgo deberemos tener una ganancia esperada mayor.
 
-$VPN \sim N(\mu, \sigma^2)$ y utilidad con aversión constante tal que $u(w) = -e^{-Aw}$, considerar dos inversiones 
+# Ejercicio 5
 
+$VPN \sim N(\mu, \sigma^2)$ y utilidad con aversión constante tal que $u(w) = -e^{-Aw}$, considerar dos inversiones Inversión 1: $\mu_1 =3000$ $\sigma^2 = 500$ Inversión 2: $\mu_2 =3500$ $\sigma^2 = 1600$ A = 1
 
-(usando media y varianza de ejercicio 3 por ejemplo) 
-A = 1 
+1.  Determinar que negocio es más conveniente
 
-1. Determinar que negocio es más conveniente 
+$$w_{q1} = \mu_1 - \frac{A}{2}\sigma_1^2= 3000-250=2750$$ $$w_{q2} = \mu_1 - \frac{A}{2}\sigma_1^2= 3500-800=2700$$
 
-2. ¿Cuanto tendría que ser la ganancia esperada de B para ser conveniente ? 
+2.  ¿Cuanto tendría que ser la ganancia esperada de 2 para ser conveniente ?
 
-3. ¿Cómo cambia lo anterior si $A = 10$?
----
+Debería ser al menos 3550 para que $w_{q2}>2750$
+
+3.  ¿Cómo cambia lo anterior si $A = 10$?
+
+$$w_{q1} = \mu_1 - \frac{A}{2}\sigma_1^2= 3000-10*250=500$$ $$w_{q2} = \mu_1 - \frac{A}{2}\sigma_1^2= 3500-10*800=-4500$$ La ganancia esperada de la inversión 2 debería ser al menos 9500 para que $w_{q2}>500$
