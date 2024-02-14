@@ -5,7 +5,7 @@ format:
   colortheme: beaver
   theme: Szeged
 author: Natalia da Silva     
-date: Febrero 2024
+date: 14 Febrero 2024
 lang: es
 execute:
   echo: false
@@ -47,7 +47,7 @@ Incorporar incertidumbre (*riesgo*) en la evaluación de inversiones.
 
 - Aversión al riesgo, definición y medidas de aversión al riesgo 
 
-- Renta equivalente y Prima por riesgo    
+- Renta equivalente   
 
 \vspace{1cm}
 
@@ -184,7 +184,10 @@ $w_q$ es el valor de ganancia/riqueza que verifica:
 
 $$u(w_q)=E[u(w)]$$
 
-- En el ejemplo: $w_q = u^{-1}(UE) = 64$
+- En el ejemplo: $u(w_q) = E[u(w)] = 8$
+
+$\sqrt(w_q)=8$ entonces $w_q=64$
+
 - Soy *indiferente* entre vender a 64 o obtener una ganancia esperada de 68 ya que tienen la misma utilidad esperada.
 
 \vspace{1.5cm}
@@ -283,7 +286,7 @@ Ver que les quede coherente con Ej. 1
 # Ejercicio 3 
 Tenemos que decidir entre dos inversiones:
 
-Inversión A que tiene tres posibles ganancias, que son de 6000, 4000 o 1000 con probabilidades de 0.3, 0.4 y 0.3, respectivamente. En este caso el valor monetario esperado es 3700  .
+Inversión A que tiene tres posibles ganancias, que son de 6000, 4000 o 1000 con probabilidades de 0.3, 0.4 y 0.3, respectivamente.
 
 Con la inversión B se puede perder 10.000 o  ganar 20.000 o 7.000, con probabilidades respectivas de 0.5, 0.4 y 0.1.
 
