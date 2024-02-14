@@ -1,0 +1,217 @@
+---
+title: "Notas: Inversión en contexto de incertidumbre"
+subtitle: "Matemática Financiera"
+format: pdf
+editor: visual
+---
+
+# Introducción
+
+La teoría económica estudia cómo los agentes económicos asignan sus recursos escasos entre las alternativas disponibles. Esta asignación de recursos puede estudiarse desde una perspectiva atemporal o intertemporal, bajo certidumbre o incertidumbre. En todos los casos, lo que se busca es modelar el comportamiento de un individuo o un grupo de ellos, con el objeto de entender mejor algunos aspectos del mundo real. La teoría microeconómica tradicional modela el comportamiento individual o grupal, bajo condiciones de certidumbre.
+
+Así, por ejemplo, se estudia la forma en que el consumidor o productor asigna sus recursos entre los distintos bienes o insumos disponibles, suponiendo que la decisión busca maximizar alguna función objetivo.
+
+También se estudian las decisiones de consumo presente versus consumo futuro, al igual que las decisiones de producir para hoy o para alguna fecha futura, todo lo anterior bajo condiciones de certidumbre.
+
+Hay dos elementos fundamentales que distinguen la teoría microeconómica clásica de la Teoría de Finanzas: el elemento tiempo y el elemento incertidumbre.
+
+Aquí el elemento tiempo será simplificado, suponiendo que existen sólo dos instantes (modelo de dos periodos), o bien se supondrá que para modelar los procesos de toma de decisiones de los individuos en un contexto intertemporal basta con explicar el comportamiento para dos instantes sucesivos en el tiempo
+
+## Evaluación de proyectos de inversión
+
+En una primera etapa, utilizaremos una serie de instrumentos de tiempo y criterios de evaluación suponiendo que todo el conjunto de factores que inciden en el proceso de inversión son conocidos de antemano (óptica determinística)
+
+Toda inversión implica una aplicación de fondos, toda inversión tendrá asociada una serie de pagos localizados en el tiempo. A cada uno de estos pagos lo notaremos con la letra $A$, acompañada de un subíndice que representa la ubicación temporal del mismo. Así $A_0$ será el desembolso inicial 1 y $A_k$ el desembolso k períodos después de la erogación inicial. Así la serie de pagos de una inversión cuya vida útil es n períodos será:
+
+$A_0, A_1,\ldots,A_n con A_k ≥0, ∀k ∈N, 1≤k≤n$
+
+-   $A_k$ Pago en el momento k
+
+-   $B_k$ Cobro en el momento $k$
+
+$I_k= B_k-A_k$ Ingresos netos asociados al instante k
+
+Ya vimos distintas formas de evaluar los proyectos de inversión
+
+-   VPN (Valor presente neto)
+
+-   TIR (Tasa interna de retorno)
+
+-   VPNP (Valor presente neto promedio)
+
+Veremos como evaluar inversiones usando el VPN en contexto de Incertidumbre.
+
+Recordemos que:
+
+$VPN = I_0 + \sum_{k=1}^n I_k (1 + i)^{−k}$
+
+$VPN>0$ Conviene invertir
+
+$VPN=0$ Es indiferente
+
+$VPN<0$ No es conveniente
+
+## Funcion de Utilidad de la riqueza
+
+Suponga un modelo de dos períodos: en el primer período se toma la decisión (se invierte la riqueza que no ha sido consumida) y en el segundo período se conoce la consecuencia de la decisión (se obtiene una riqueza terminal, que es probabilística).
+
+Nótese que si w tiene una distribución de probabilidad (si la riqueza terminal es incierta) entonces el nivel de utilidad terminal es incierto (también tiene una distribución de probabilidad)
+
+Hasta ahora, los inversores maximizan utilidad conociendo su ingreso y el precio de los bienes con total certeza.
+
+A menudo, los consumidores/ inversores enfrentan decisiones riesgosas.
+
+## Valor Esperado
+
+Para $n$ resultados posibles:
+
+-   que tiene como pagos $x_1, x_2, \ldots x_n$
+
+-   la probabilidad de cada resultado es $p_1, p_2, \ldots p_n$
+
+-   el valor esperado es $E(x)= p_1*x_1+p_2*x_2+\ldots p_n*x_n$
+
+Un juego justo son aquellos donde el valor esperado =0, o en los que el derecho a jugar es igual al valor esperado.
+
+## Ejemplo: Escogiendo entre 2 inversiones
+
+-   Inversión 1, hay dos resultados igualmente probables: ganar \$2.000 o ganar \$1.000.
+
+-   Inversión 2 \$1.510 con probabilidad 0.99, o \$510 si la compañía entra en quiebra, lo que ocurre con probabilidad 0.01
+
+Resultados Posibles
+
+|             | Res. 1 | Res. 1   | Res. 2 | Res. 2   |
+|-------------|--------|----------|--------|----------|
+|             | Prob.  | Ganancia | Prob.  | Ganancia |
+| Inversión 1 | .5     | \$2000   | 0.5    | \$1000   |
+| Inversión 2 | .99    | \$1510   | 0.1    | \$510    |
+
+-   Ganancia esperada de la Inversión 1
+
+    $E(x_1 ) = .5(2000)+ .5(1000)= 1500$
+
+-   Ganancia esperada de la Inversión 2
+
+$E(x_2)=.99(510)+ .01(510)=1500$
+
+En el ejemplo, los valores esperados son iguales pero la variabilidad no lo es. Riesgo: variabilidad de los resultados de determinada actividad incierta.
+
+$\sigma=\sqrt(E((x-E(x))^2))$
+
+$\sigma_1=\sqrt(0.5*250000+0.5*250000)=500$
+
+$\sigma_2=\sqrt(0.99*100+0.01*980100)=99.5$
+
+**Inversión 1:** Valor esperado es 1500 y desviación estándar es 500
+
+**Inversión 2:** Valor esperado es 1400 y desviación estándar es \$100
+
+-   ¿Qué inversión se escoge?
+
+-   Depende de la persona
+
+-   Algunos prefieren mayor riesgo a fin de tener ganancias más altas
+
+-   Otros prefieren menor riesgo, incluso si esto implica menores ganancias
+
+## Utilidad Esperada
+
+-   Considere la utilidad que se obtiene en situaciones de riesgo: Los agentes obtienen utilidad del ingreso o de los valores posibles de las ganancias.
+
+-   Cómo podemos generar una función de utilidad que toma el riesgo y los montos en cuenta? Podemos pensar en una función muy general:
+
+    $U(x_1,x_2, \ldots x_n; \pi_1, \pi_2\ldots \pi_n)$
+
+Variabilidad proviene de desviaciones en las ganancias, diferencia entre la ganancia esperada la realmente obtenido
+
+Los economistas usan la Utilidad Esperada o de von Neumann-Morgenstern $E(U) = (Prob. U_1) *(U_1) + (Prob.U_2)*(U_2)...$
+
+## Aversión al Riesgo
+
+Cuando individuos deben elegir entre dos jugadas arriesgadas con el mismo valor esperado, normalmente eligen la que tiene un rendimiento menos variable.
+
+La utilidad marginal de la riqueza disminuye a medida que va aumentando el premio.
+
+Un gran premio, pequeña ganancia en utilidad
+
+- Una gran pérdida, gran pérdida de utilidad. Supongamos un individuo con riqueza w\\\* al que se le ofrecen dos juegos justos:
+
+Probabilidad de 50% de perder o ganar h
+
+Probabilidad de 50% de perder o ganar 2h
+
+La UE de cada juego es:
+
+-   J1:$UE=0.5U(w*+h)+0.5U(w*-h)$
+
+-   J2:$UE=0.5U(w*+2h)+0.5U(w*-2h)$
+
+![](utilidad.png)
+
+-   Aquellos que prefieren un ingreso con absoluta certeza en lugar de un ingreso riesgoso (con igual valor esperado)
+
+-   Estarán dispuestos a pagar algo por no tener que tomar apuestas justas
+
+-   Tienen una utilidad marginal decreciente del ingreso
+
+-   Actitud más común hacia el Riesgo. Ej.: Seguros
+
+Utilidad (Resultado Esperado) \> Utilidad Esperada (de todos los posibles ingresos)
+
+## Medición de la Aversión al Riesgo
+
+-   La aversión al riesgo depende de la curvatura de la función de utilidad
+
+-   Se usan dos medidas: el grado de aversión absoluta al riesgo (A) y el grado de aversión relativa al riesgo (R)
+
+$A(c)=-\frac{u^{''}(c)}{u^{'}(c)}$
+
+$R(c)=-\frac{u^{''}(c)}{u^{'}(c)}c$
+
+## Neutralidad al Riesgo
+
+Se es neutral al riesgo si es indiferente entre un ingreso cierto y un ingreso riesgoso con igual valor esperado.
+Es indiferente de participar en un juego justo, la utilidad marginal del ingreso constante y la función de utilidad lineal.
+
+
+![](utilidad2.png)
+
+## Amante del Riesgo
+
+Ser amante del riesgo es menos común, estos individuos prefiere participar en un juego justo a la certeza.
+Algunos agentes buscan riesgo: fumadores, jugadores, etc.
+Tienen una utilidad marginal creciente del ingreso, la función de utilidad convexa
+La prima de riesgo es negativa: habría que pagarles para que compren un seguro.
+
+## Riesgo en qué variables
+
+Hasta ahora, hemos visto incertidumbre en termino de ingreso.
+Podemos tener incertidumbre en otras variables: precios, costos, etc.
+Nada obliga un individuo a tener las mismas preferencias frente del riesgo con cada variable. Depende de la forma funcional
+
+## Prima por Riesgo
+
+La Prima de Riesgo la máxima cantidad de dinero que una persona adversa al riesgo pagaría a fin de no enfrentar riesgo
+
+Equivalente cierto: nivel de ingreso cierto que deja al individuo con el mismo nivel de utilidad de participar en la lotería
+
+
+Suponga tiene un 50-50% de ganar 10 o 30 con valor esperado de 20. Suponga que la utilidad esperada es 14
+
+-   Una persona adversa al riesgo obtiene la misma utilidad (14) si le ofrecen 16 con certeza (se llama el ingreso equivalente cierto)
+
+-   Prima por riesgo: Dispuesta a pagar hasta 4 a fin de no tener riesgo.
+
+
+![](utilidad3.png)
+
+## Utilidad esperada y comportamiento de los agentes
+
+-   La utilidad esperada es una alternativa para modelar las decisiones de los agentes al frente del riesgo
+
+-   Tiene muchos ventajas por su simplicidad
+
+-   ¿Pero describe bien el comportamiento de la gente?
+
+Hay muchos experimentos de laboratorio que indican que los ser humanos no toman decisiones al frente del riesgo como la función de utilidad esperada le indica.
