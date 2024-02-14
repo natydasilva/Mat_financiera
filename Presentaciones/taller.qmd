@@ -232,8 +232,11 @@ $$ UE = E[ -e^{-Aw} ] = -e^{-A(\mu - A\sigma^2/2) } $$
 
 La **ganancia segura equivalente** se obtiene haciendo como
 $$w_q = \mu - \frac{A}{2}\sigma^2$$
+
 - Podemos comparar proyectos en condiciones de incertidumbre en base a $w_q$.
+
 - Seleccionamos el proyecto con mayor $w_q$.
+
 - En este caso la ecuación muestra el compromiso entre ganancia esperada y riesgo, inversores adversos al riesgo exigen mayores ganancias para compensar el riesgo.
 
 # Ejercicios 
